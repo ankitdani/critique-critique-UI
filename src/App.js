@@ -43,6 +43,7 @@ function App() {
 
         setReviews(singleMovie.reviews);
         
+        console.log("response", response);
 
     } 
     catch (error) 
