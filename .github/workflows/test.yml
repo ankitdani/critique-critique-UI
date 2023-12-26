@@ -20,7 +20,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 16
+          node-version: 14
 
       - name: Install Dependencies
         run: |
@@ -35,6 +35,6 @@ jobs:
 
       - name: Cypress run
         run: |
-          npm run cypress:run  # Replace with the actual npm script to run Cypress tests
+          npm run cypress:run
         env:
           CYPRESS_CACHE_FOLDER: ${{ runner.workspace }}/.cache/Cypress
