@@ -1,40 +1,26 @@
-name: End-to-end tests
+name: Cypress Tests
 
 on:
   push:
     branches:
-      - master
       - main
+      - master
 
 jobs:
-  cypress-run:
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: [ubuntu-latest, windows-latest, macos-latest]
+  test:
+    runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-      - name: Setup Node.js
+      - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 14
+          node-version: 16
 
-      - name: Install Dependencies
-        run: |
-          npm install
+      - name: Install dependencies
+        run: npm install
 
-      - name: Cache Cypress binary
-        uses: actions/cache@v2
-        with:
-          path: |
-            ~/.cache/Cypress
-          key: ${{ runner.os }}-cypress-${{ hashFiles('cypress.json') }}
-
-      - name: Cypress run
-        run: |
-          npm run cypress:run
-        env:
-          CYPRESS_CACHE_FOLDER: ${{ runner.workspace }}/.cache/Cypress
+      - name: Run Cypress tests
+        run: npm run cypress:run
