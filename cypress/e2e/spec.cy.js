@@ -8,8 +8,6 @@ describe('Basic tests', () => {
   
       cy.get('.navbar-brand').should('contain.text', 'Critique Critique');
 
-
-
   })
 
 })
