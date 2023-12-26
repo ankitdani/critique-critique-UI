@@ -12,7 +12,7 @@ return (
     <Navbar bg="dark" variant="dark" expand="lg">
         <Container fluid>
             <Navbar.Brand href="/" style={{"color":'gold'}}>
-                <FontAwesomeIcon icon ={faVideoSlash}/> Critique Critique
+                <FontAwesomeIcon data-test = "test-header" icon ={faVideoSlash}/> Critique Critique
             </Navbar.Brand>
             <Navbar.Toggle aria-controls="navbarScroll" />
             <Navbar.Collapse id="navbarScroll">
