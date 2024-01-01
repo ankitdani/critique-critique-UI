@@ -10,7 +10,13 @@ describe('Basic tests', () => {
 
   it('Contain correct header text', () => {
   
-      cy.get('.navbar-brand').should('contain.text', 'Critique Critique');
+    cy.get('.navbar-brand').should('contain.text', 'Critique Critique');
+
+  })
+
+  it('Clicks on the Reviews button', () => {
+
+    cy.get('.movie-review-button-container').click();
 
   })
 
